@@ -7,12 +7,13 @@ var tokyo,
 		i,
 		line,
 		locations = [
-			['Tokyo, JP', 35.693840,139.703549, 1],
-			['Dallas, TX', 32.7767,-96.7970, 2],
-			['New York City, NY', 40.7128,-73.985130, 3],
-			['Boston, MA', 40.7128,-71.038887, 4],
-			['Chicago, IL', 41.851215,-87.634422, 5],
-			['Milwaukee, WI', 43.0389,-87.9065, 6]
+			['<h2>Tokyo, JP</h2>', 35.693840,139.703549, 1],
+			['<h2>Dallas, TX</h2>', 32.7767,-96.7970, 2],
+			['<h2>New York City, NY</h2>', 40.7128,-73.985130, 3],
+			['<h2>Boston, MA</h2>', 40.7128,-71.038887, 4],
+			['<h2>Chicago, IL</h2>', 41.851215,-87.634422, 5],
+			['<h2>Milwaukee, WI</h2>', 43.0389,-87.9065, 6],
+			['<h2>Washington, D.C.</h2>', 38.9072,-77.0369, 7]
 		];
 
 // Generate map, markers and line
@@ -36,7 +37,7 @@ function initMap() {
 			new google.maps.LatLng(41.851215, -87.634422),
 	    new google.maps.LatLng(46.5476, -87.3956)
 		],
-		strokeColor: "#e5c163",
+		strokeColor: "#686462",
 		strokeOpacity: 1.0,
 		strokeWeight: 2,
 		geodesic: true,
