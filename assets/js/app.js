@@ -10,10 +10,11 @@ var tokyo,
 			['<h2>Tokyo, JP</h2>', 35.693840,139.703549, 1],
 			['<h2>Dallas, TX</h2>', 32.7767,-96.7970, 2],
 			['<h2>New York City, NY</h2>', 40.7128,-73.985130, 3],
-			['<h2>Boston, MA</h2>', 40.7128,-71.038887, 4],
+			['<h2>Boston, MA</h2>', 42.3601,-71.0589, 4],
 			['<h2>Chicago, IL</h2>', 41.851215,-87.634422, 5],
 			['<h2>Milwaukee, WI</h2>', 43.0389,-87.9065, 6],
-			['<h2>Washington, D.C.</h2>', 38.9072,-77.0369, 7]
+			['<h2>Washington, D.C.</h2>', 38.9072,-77.0369, 7],
+			['<h2>Hershey, PA</h2>', 40.2859,-76.6502, 8]
 		];
 
 // Generate map, markers and line
@@ -32,16 +33,16 @@ function initMap() {
 			map: map
 		});
 		line = new google.maps.Polyline({
-		path: [
-	    new google.maps.LatLng(locations[i][1], locations[i][2]),
-			new google.maps.LatLng(41.851215, -87.634422),
-	    new google.maps.LatLng(46.5476, -87.3956)
-		],
-		strokeColor: "#686462",
-		strokeOpacity: 1.0,
-		strokeWeight: 2,
-		geodesic: true,
-		map: map
+			path: [
+		    new google.maps.LatLng(locations[i][1], locations[i][2]),
+				new google.maps.LatLng(41.851215, -87.634422),
+		    new google.maps.LatLng(46.5476, -87.3956)
+			],
+			strokeColor: "#686462",
+			strokeOpacity: 1.0,
+			strokeWeight: 2,
+			geodesic: true,
+			map: map
 		});
 		google.maps.event.addListener(marker, 'click', (function(marker, i) {
 		 return function() {
