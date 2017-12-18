@@ -7,9 +7,12 @@ var tokyo,
 		i,
 		line,
 		locations = [
-			['Tokyo, Japan', 35.693840,139.703549, 1],
-			['Dallas Texas', 32.7767,-96.7970, 2],
-			['New York City', 40.7128,-73.985130, 3],
+			['Tokyo, JP', 35.693840,139.703549, 1],
+			['Dallas, TX', 32.7767,-96.7970, 2],
+			['New York City, NY', 40.7128,-73.985130, 3],
+			['Boston, MA', 40.7128,-71.038887, 4],
+			['Chicago, IL', 41.851215,-87.634422, 5],
+			['Milwaukee, WI', 43.0389,-87.9065, 6]
 		];
 
 // Generate map, markers and line
