@@ -14,7 +14,8 @@ var tokyo,
 			['<h2>Chicago, IL</h2>', 41.851215,-87.634422, 5],
 			['<h2>Milwaukee, WI</h2>', 43.0389,-87.9065, 6],
 			['<h2>Washington, D.C.</h2>', 38.9072,-77.0369, 7],
-			['<h2>Hershey, PA</h2>', 40.2859,-76.6502, 8]
+			['<h2>Hershey, PA</h2>', 40.2859,-76.6502, 8],
+			['<h2>Toronto, ON', 51.2538,-85.3232, 9]
 		];
 
 // Generate map, markers and line
@@ -35,7 +36,6 @@ function initMap() {
 		line = new google.maps.Polyline({
 			path: [
 		    new google.maps.LatLng(locations[i][1], locations[i][2]),
-				new google.maps.LatLng(41.851215, -87.634422),
 		    new google.maps.LatLng(46.5476, -87.3956)
 			],
 			strokeColor: "#686462",
