@@ -19,7 +19,8 @@ gulp.task('serve', ['html', 'sass', 'js'], function() {
 
     browserSync.init({
         server: '../docs/',
-        browser: "google chrome"
+        open: false,
+        port: 3000
     });
 
     gulp.watch('../*.html', ['html']);
