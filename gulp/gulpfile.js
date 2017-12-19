@@ -18,7 +18,7 @@ var scripts = [
 gulp.task('serve', ['html', 'sass', 'js'], function() {
 
     browserSync.init({
-        server: '../dist/',
+        server: '../docs/',
         browser: "google chrome"
     });
 
@@ -31,7 +31,7 @@ gulp.task('serve', ['html', 'sass', 'js'], function() {
 gulp.task('html', function() {
   return gulp.src('../*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('../dist'));
+    .pipe(gulp.dest('../docs'));
 });
 
 // Configure CSS tasks.
@@ -41,7 +41,7 @@ gulp.task('sass', function () {
     .pipe(prefix('last 2 versions'))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('../dist/css'))
+    .pipe(gulp.dest('../docs/css'))
     .pipe(browserSync.stream());
 });
 
@@ -51,7 +51,7 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(concat('app.js'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('../dist/js'))
+    .pipe(gulp.dest('../docs/js'))
     .pipe(browserSync.stream());
 });
 
