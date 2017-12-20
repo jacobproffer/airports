@@ -11,19 +11,21 @@ var center,
     newYorkTrip,
     trips,
     markers = [
-      ['<h2>Tokyo, JP</h2>', 35.693840,139.703549, 1],
-      ['<h2>Dallas, TX</h2>', 32.7767,-96.7970, 2],
-      ['<h2>New York City, NY</h2>', 40.7128,-73.985130, 3],
-      ['<h2>Boston, MA</h2>', 42.3601,-71.0589, 4],
-      ['<h2>Chicago, IL</h2>', 41.851215,-87.634422, 5],
-      ['<h2>Washington, D.C.</h2>', 38.9072,-77.0369, 7],
-      ['<h2>Hershey, PA</h2>', 40.2859,-76.6502, 8]
+      ['<h2>Narita International Airport</h2>', 35.7720,140.3929, 1],
+      ['<h2>Dallas/Forth Worth International Airport</h2>', 32.8998,-97.0403, 2],
+      ['<h2>John F. Kennedy International Airport</h2>', 40.6413,-73.7781, 3],
+      ['<h2>LaGuardia Airport</h2>', 40.7769,-73.8740],
+      ['<h2>Logal International Airport</h2>', 42.3656,-71.0096, 4],
+      ['<h2>Detroit Metropolitan Airport</h2>', 42.2162,-83.3554],
+      ['<h2>OHare International Airport</h2>', 41.9742,-87.9073, 5],
+      ['<h2>Harrisburg International Airport</h2>', 40.1942,-76.7577, 8],
+      ['<h2>Sawyer International Airport', 46.3497,-87.3873]
 ];
 
 // Generate map, markers and line
 
 function initMap() {
-	center = {lat: 46.5476, lng: -87.3956};
+	center = {lat: 46.3497, lng: -87.3873};
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 3,
 		center: center,
@@ -59,7 +61,7 @@ function initMap() {
   texasTrip2017 = [
     // K.I. Sawyer Airport (MQT)
     new google.maps.LatLng(46.3497,-87.3873),
-    // Detroit, Michigan
+    // Detroit Metropolitan Airport (DTW)
     new google.maps.LatLng(42.2162,-83.3554),
     // Dallas Fort Worth (DFT)
     new google.maps.LatLng(32.8998,-97.0403)
