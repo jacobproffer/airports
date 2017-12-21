@@ -1,3 +1,43 @@
+.flex-wrap {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.flex-item {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  max-width: 100%;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+  @include screen-above(1024px) {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    max-width: 50%;
+  }
+}
+
 .map {
   @include size(100%, 100vh);
 }
