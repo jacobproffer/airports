@@ -11,16 +11,16 @@ var center,
     newYorkTrip,
     trips,
     markers = [
-      ['<h2>Narita International Airport</h2>', 35.7720,140.3929, 1],
-      ['<h2>Dallas/Forth Worth International Airport</h2>', 32.8998,-97.0403, 2],
-      ['<h2>John F. Kennedy International Airport</h2>', 40.6413,-73.7781, 3],
-      ['<h2>LaGuardia Airport</h2>', 40.7769,-73.8740, 4],
-      ['<h2>Logal International Airport</h2>', 42.3656,-71.0096, 4],
-      ['<h2>Detroit Metropolitan Airport</h2>', 42.2162,-83.3554, 5],
-      ['<h2>OHare International Airport</h2>', 41.9742,-87.9073, 6],
-      ['<h2>Harrisburg International Airport</h2>', 40.1942,-76.7577, 7],
-      ['<h2>Austin Straubel International Airport</h2>',44.4834,-88.1344,8],
-      ['<h2>Sawyer International Airport', 46.3497,-87.3873, 9]
+      ['<h3>Narita International Airport</h3>', 35.7720,140.3929, 1],
+      ['<h3>Dallas/Forth Worth International Airport</h3>', 32.8998,-97.0403, 2],
+      ['<h3>John F. Kennedy International Airport</h3>', 40.6413,-73.7781, 3],
+      ['<h3>LaGuardia Airport</h3>', 40.7769,-73.8740, 4],
+      ['<h3>Logal International Airport</h3>', 42.3656,-71.0096, 4],
+      ['<h3>Detroit Metropolitan Airport</h3>', 42.2162,-83.3554, 5],
+      ['<h3>OHare International Airport</h3>', 41.9742,-87.9073, 6],
+      ['<h3>Harrisburg International Airport</h3>', 40.1942,-76.7577, 7],
+      ['<h3>Austin Straubel International Airport</h3>',44.4834,-88.1344,8],
+      ['<h3>Sawyer International Airport', 46.3497,-87.3873, 9]
 ];
 
 // Generate map, markers and line

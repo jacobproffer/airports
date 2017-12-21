@@ -9,6 +9,7 @@ h2 {
 }
 
 h3 {
+  color: $black;
   @include font-size($h3-font-sizes);
 }
 
