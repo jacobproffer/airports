@@ -4,6 +4,9 @@
   @include box-sizing(border-box);
 }
 
+::-moz-selection { color: $white; background: $pink; }
+::selection { color: $white; background: $pink; }
+
 img {
 	max-width: 100%;
 }
@@ -11,4 +14,6 @@ img {
 body {
   color: $white;
   background: $black;
+  font-family: 'Roboto', sans-serif;
+  line-height: 2;
 }

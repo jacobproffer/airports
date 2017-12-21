@@ -1,9 +1,10 @@
 h1 {
+  margin-top: 0;
+  text-transform: uppercase;
   @include font-size($h1-font-sizes);
 }
 
 h2 {
-  color: black;
   @include font-size($h2-font-sizes);
 }
 

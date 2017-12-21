@@ -1,41 +1,58 @@
-.flex-wrap {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+.content-wrap {
+  width: 100%;
+  @include clearfix;
 }
 
-.flex-item {
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-flex: 0 1 100%;
-  -ms-flex: 0 1 100%;
-  flex: 0 1 100%;
-  max-width: 100%;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
+.content-left,
+.content-right {
   @include screen-above(1024px) {
-    -webkit-flex: 0 1 50%;
-    -ms-flex: 0 1 50%;
-    flex: 0 1 50%;
-    max-width: 50%;
+    @include size(50%, auto);
   }
+}
+
+.content-left {
+  @include screen-above(1024px) {
+    float: left;
+  }
+}
+
+.content-right {
+  @include screen-above(1024px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+}
+
+.heading {
+  position: relative;
+  background-image: url('../img/narita.jpg');
+  @include background-cover;
+  @include screen-below(1024px) {
+    padding: 250px 0;
+    @include size(100%, auto);
+  }
+  @include screen-above(1024px) {
+    @include size(100%, 100vh);
+  }
+  &:before {
+    content: '';
+    background-color: $gray;
+    @supports (mix-blend-mode: multiply) {
+      mix-blend-mode: multiply;
+    }
+    @include absolute(0, 0, 0, 0);
+    @include size(100%);
+  }
+  h1 {
+    text-decoration: underline wavy $pink;
+    @include absolute(50%, auto, auto, 50%);
+    @include transform(translate(-50%, -50%));
+  }
+}
+
+.info {
+  padding: 50px;
 }
 
 .map {
