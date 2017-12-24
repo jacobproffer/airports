@@ -6,8 +6,8 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Marker">
-            <circle id="Oval" fill="#E1D4CF" opacity="0.402287138" cx="15" cy="15" r="15"></circle>
-            <circle id="Oval-2" fill="#FFFFFF" cx="15" cy="15" r="2"></circle>
+            <circle id="Oval" fill="#59A955" opacity="0.402287138" cx="15" cy="15" r="15"></circle>
+            <circle id="Oval-2" fill="#FFFFFF" opacity="0.579999983" cx="15" cy="15" r="2"></circle>
         </g>
     </g>
 </svg>
