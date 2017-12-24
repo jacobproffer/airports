@@ -143,7 +143,7 @@ function initMap() {
   function generateLine(params) {
     line = new google.maps.Polyline({
       path: params,
-      strokeColor: "#FD2B55",
+      strokeColor: "#A8CD61",
       strokeOpacity: 1.0,
       strokeWeight: 2,
       geodesic: true,
