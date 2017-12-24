@@ -29,7 +29,7 @@ let map,
     ];
 
 const focal = {lat: 46.3497, lng: -87.3873},
-     iconBase = 'http://localhost:3000/img/marker.svg';
+     iconBase = 'http://jacobproffer.com/locations/img/marker.svg';
 
 // Generate map, markers and line
 function initMap() {
