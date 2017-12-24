@@ -1,15 +1,20 @@
 // Variables
 
-var center,
-    map,
+let map,
     infowindow,
     marker,
     i,
     line,
-    japanTrip,
-    texasTrip,
-    newYorkTrip,
+    japanTrip2017,
+    texasTrip2017,
+    newYorkTrip2017,
+    bostonTrip2016,
+    newYorkTrip2014,
+    newYorkTrip2012,
+    hersheyTrip2014,
     trips,
+    center = {lat: 46.3497, lng: -87.3873},
+    style = [{"stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#000000"}]},{"featureType":"landscape","stylers":[{"visibility":"on"},{"color":"#342B3F"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"weight":1}]}],
     markers = [
       ['<h3>Narita International Airport</h3>', 35.7720,140.3929, 1],
       ['<h3>Dallas/Forth Worth International Airport</h3>', 32.8998,-97.0403, 2],
@@ -21,16 +26,15 @@ var center,
       ['<h3>Harrisburg International Airport</h3>', 40.1942,-76.7577, 7],
       ['<h3>Austin Straubel International Airport</h3>',44.4834,-88.1344,8],
       ['<h3>Sawyer International Airport', 46.3497,-87.3873, 9]
-];
+    ];
 
 // Generate map, markers and line
-
 function initMap() {
-	center = {lat: 46.3497, lng: -87.3873};
+	center = center;
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 3,
 		center: center,
-    styles: [{"stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#000000"}]},{"featureType":"landscape","stylers":[{"visibility":"on"},{"color":"#342B3F"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"weight":1}]}]
+    styles: style
 	});
 
 	infowindow = new google.maps.InfoWindow();
