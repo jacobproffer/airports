@@ -5,7 +5,8 @@ var gulp        = require('gulp'),
     cssmin      = require('gulp-cssmin'),
     rename      = require('gulp-rename'),
     prefix      = require('gulp-autoprefixer'),
-    uglify      = require('gulp-uglify'),
+    babel       = require('gulp-babel'),
+    minify      = require("gulp-babel-minify"),
     concat      = require('gulp-concat'),
     htmlmin     = require('gulp-htmlmin'),
     browserSync = require('browser-sync').create();
@@ -49,7 +50,8 @@ gulp.task('sass', function () {
 // Configure JS.
 gulp.task('js', function() {
   return gulp.src(scripts)
-    .pipe(uglify())
+    .pipe(babel())
+    .pipe(minify())
     .pipe(concat('app.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('../docs/js'))
