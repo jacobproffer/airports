@@ -1,6 +1,7 @@
 // Variables
 
 let map,
+    center,
     infowindow,
     marker,
     i,
@@ -13,7 +14,6 @@ let map,
     newYorkTrip2012,
     hersheyTrip2014,
     trips,
-    center = {lat: 46.3497, lng: -87.3873},
     style = [{"stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#000000"}]},{"featureType":"landscape","stylers":[{"visibility":"on"},{"color":"#342B3F"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"weight":1}]}],
     markers = [
       ['<h3>Narita International Airport</h3>', 35.7720,140.3929, 1],
@@ -28,9 +28,11 @@ let map,
       ['<h3>Sawyer International Airport', 46.3497,-87.3873, 9]
     ];
 
+const focal = {lat: 46.3497, lng: -87.3873};
+
 // Generate map, markers and line
 function initMap() {
-	center = center;
+	center = focal;
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 3,
 		center: center,
