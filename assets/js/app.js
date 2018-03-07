@@ -15,7 +15,7 @@ var map,
     hersheyTrip2014,
     texasTrip2003,
     trips,
-    style = [{"stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#000000"}]},{"featureType":"landscape","stylers":[{"visibility":"on"},{"color":"#342B3F"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"weight":1}]}],
+    style = [{"stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#000000"}]},{"featureType":"landscape","stylers":[{"visibility":"on"},{"color":"#342b3f"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"weight":1}]}],
     markers = [
       ['<h3>Narita International Airport</h3>', 35.7720,140.3929, 1],
       ['<h3>Dallas/Forth Worth International Airport</h3>', 32.8998,-97.0403, 2],
@@ -191,7 +191,7 @@ function initMap() {
   function generateLine(params) {
     line = new google.maps.Polyline({
       path: params,
-      strokeColor: "#A8CD61",
+      strokeColor: "#a8cd61",
       strokeOpacity: 0.35,
       strokeWeight: 2,
       geodesic: true,
