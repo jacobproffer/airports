@@ -45,7 +45,7 @@ var markers = [
 var focal = { lat: 46.3497, lng: -87.3873 };
 var iconBase = 'http://jacobproffer.com/locations/img/marker.svg';
 
-/* eslint-disable */
+/* eslint-disable no-unused-vars */
 function initMap() {
   center = focal;
   map = new google.maps.Map(document.getElementById('map'), {
@@ -218,4 +218,4 @@ function initMap() {
     generateLine(trips[i]);
   }
 }
-/* eslint-enable */
+/* eslint-enable no-console */
