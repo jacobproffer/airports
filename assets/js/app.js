@@ -1,6 +1,6 @@
 // Variables
 
-let map,
+var map,
     center,
     infowindow,
     marker,
@@ -32,7 +32,7 @@ let map,
       ['<h3>Sawyer International Airport', 46.3497,-87.3873, 13]
     ];
 
-const focal = {lat: 46.3497, lng: -87.3873},
+var focal = {lat: 46.3497, lng: -87.3873},
      iconBase = 'http://jacobproffer.com/locations/img/marker.svg';
 
 // Generate map, markers and line

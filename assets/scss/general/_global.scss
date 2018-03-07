@@ -1,11 +1,13 @@
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   @include box-sizing(border-box);
 }
 
-::-moz-selection { color: $white; background: $pink; }
-::selection { color: $white; background: $pink; }
+::selection {
+  color: $white;
+  background: $pink;
+}
 
 img {
 	max-width: 100%;

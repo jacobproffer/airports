@@ -35,7 +35,8 @@
   @include screen-above(1024px) {
     @include size(100%, 100vh);
   }
-  &:before {
+
+  &::before {
     content: '';
     background-color: $gray;
     @supports (mix-blend-mode: multiply) {
@@ -44,6 +45,7 @@
     @include absolute(0, 0, 0, 0);
     @include size(100%);
   }
+
   h1 {
     @include absolute(50%, auto, auto, 50%);
     @include transform(translate(-50%, -50%));
