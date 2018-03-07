@@ -218,4 +218,4 @@ function initMap() {
     generateLine(trips[i]);
   }
 }
-/* eslint-enable no-console */
+/* eslint-enable no-unused-vars */
