@@ -1,6 +1,6 @@
 h1 {
+  letter-spacing: 0.05em;
   margin-top: 0;
-  text-transform: uppercase;
   @include font-size($h1-font-sizes);
 }
 
