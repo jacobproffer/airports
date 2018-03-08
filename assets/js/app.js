@@ -15,16 +15,16 @@ var style = [
   { stylers: [{ visibility: 'off' }] },
   {
     featureType: 'water',
-    stylers: [{ visibility: 'on' }, { color: '#000000' }]
+    stylers: [{ visibility: 'on' }, { color: '#ffffff' }]
   },
   {
     featureType: 'landscape',
-    stylers: [{ visibility: 'on' }, { color: '#342b3f' }]
+    stylers: [{ visibility: 'on' }, { color: '#eeeef4' }]
   },
   {
     featureType: 'administrative',
     elementType: 'geometry.stroke',
-    stylers: [{ visibility: 'on' }, { color: '#000000' }, { weight: 1 }]
+    stylers: [{ visibility: 'on' }, { color: '#ffffff' }, { weight: 1 }]
   }
 ];
 var markers = [
@@ -205,16 +205,16 @@ function initMap() {
   function generateLine(params) {
     new google.maps.Polyline({
       path: params,
-      strokeColor: '#a8cd61',
+      strokeColor: '#a2a3cc',
       strokeOpacity: 0.35,
-      strokeWeight: 2,
+      strokeWeight: 4,
       geodesic: true,
       map: map
     });
   }
 
   // loop over trips array and call generateLine
-  for (var i = 0; i < trips.length; i++) {
+  for (i = 0; i < trips.length; i++) {
     generateLine(trips[i]);
   }
 }
