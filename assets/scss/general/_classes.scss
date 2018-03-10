@@ -11,6 +11,7 @@
 }
 
 .content-left {
+  border-right: 1px solid rgba($white, .10);
   @include screen-above(1024px) {
     float: left;
   }
@@ -38,6 +39,12 @@
     @include size(100%, 100vh);
   }
 }
+
+// .content {
+//   padding: 10% 0;
+//   border-top: 1px solid $white;
+//   border-bottom: 1px solid $white;
+// }
 
 .info {
   padding: 50px;

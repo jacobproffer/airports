@@ -1,6 +1,5 @@
 h1 {
   margin-top: 0;
-  text-transform: uppercase;
   @include font-size($h1-font-sizes);
 }
 

@@ -15,16 +15,16 @@ var style = [
   { stylers: [{ visibility: 'off' }] },
   {
     featureType: 'water',
-    stylers: [{ visibility: 'on' }, { color: '#ffffff' }]
+    stylers: [{ visibility: 'on' }, { color: '#0d0d0d' }]
   },
   {
     featureType: 'landscape',
-    stylers: [{ visibility: 'on' }, { color: '#eeeef4' }]
+    stylers: [{ visibility: 'on' }, { color: '#232323' }]
   },
   {
     featureType: 'administrative',
     elementType: 'geometry.stroke',
-    stylers: [{ visibility: 'on' }, { color: '#ffffff' }, { weight: 1 }]
+    stylers: [{ visibility: 'on' }, { color: '#0d0d0d' }, { weight: 1 }]
   }
 ];
 var markers = [
@@ -55,7 +55,7 @@ function initMap() {
   });
 
   infowindow = new google.maps.InfoWindow();
-
+  var markerCollection = [];
   for (var i = 0; i < markers.length; i += 1) {
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(markers[i][1], markers[i][2]),
@@ -66,6 +66,7 @@ function initMap() {
         anchor: new google.maps.Point(15, 15)
       }
     });
+    markerCollection.push(marker);
     google.maps.event.addListener(
       marker,
       'click',
@@ -77,6 +78,15 @@ function initMap() {
       })(marker, i)
     );
   }
+
+  var target = document.querySelector('#marker-00');
+  target.addEventListener('click', function() {
+    google.maps.event.trigger(markerCollection[0],'click');
+  });
+  var targetTwo = document.querySelector('#marker-01');
+  targetTwo.addEventListener('click', function() {
+    google.maps.event.trigger(markerCollection[1],'click');
+  });
 
   // Coordinates for my 2017 Japan trip
   japanTrip2017 = [
@@ -207,7 +217,7 @@ function initMap() {
       path: params,
       strokeColor: '#a2a3cc',
       strokeOpacity: 0.35,
-      strokeWeight: 4,
+      strokeWeight: 3,
       geodesic: true,
       map: map
     });
