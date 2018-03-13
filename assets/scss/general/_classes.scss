@@ -11,7 +11,7 @@
 }
 
 .content-left {
-  border-right: 1px solid rgba($white, 0.1);
+  border-right: 1px solid $yellow;
   @include screen-above(1024px) {
     float: left;
   }
@@ -72,10 +72,6 @@
       border: 1px solid $yellow;
     }
   }
-}
-
-.info {
-  padding: 50px;
 }
 
 .map {
