@@ -235,7 +235,7 @@ function initMap() {
       path: params,
       strokeColor: '#677279',
       strokeOpacity: 0.4,
-      strokeWeight: 4,
+      strokeWeight: 3,
       geodesic: true,
       map: map
     });
