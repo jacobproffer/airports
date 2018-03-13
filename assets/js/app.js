@@ -11,6 +11,7 @@ var newYorkTrip2012;
 var hersheyTrip2014;
 var texasTrip2003;
 var trips;
+var links = ['marker-00', 'marker-01', 'marker-02', 'marker-03', 'marker-04'];
 var style = [
   { stylers: [{ visibility: 'off' }] },
   {
@@ -79,17 +80,17 @@ function initMap() {
     );
   }
 
-  // var links = ['marker-00', 'marker-01', 'marker-02', 'marker-03', 'marker-04'];
-  //
-  // for (i = 0; i < links.length; i++) {
-  //   document.getElementById(links[i]).addEventListener('click', function() {
-  //     google.maps.event.trigger(markerCollection[i], 'click');
-  //   });
-  // }
-
-  var japan = document.getElementById('marker-00').addEventListener('click', function() {
-    google.maps.event.trigger(markerCollection[0], 'click');
-  });
+  function generateLinks(marker, index) {
+    var marker = document.getElementById(marker);
+    if (marker) {
+      marker.addEventListener('click', function() {
+        google.maps.event.trigger(markerCollection[index], 'click');
+      });
+    }
+  }
+  for (i = 0; i < links.length; i++) {
+    generateLinks(links[i], i);
+  }
 
   // Coordinates for my 2017 Japan trip
   japanTrip2017 = [
@@ -219,7 +220,7 @@ function initMap() {
     new google.maps.Polyline({
       path: params,
       strokeColor: '#677279',
-      strokeOpacity: 0.40,
+      strokeOpacity: 0.4,
       strokeWeight: 4,
       geodesic: true,
       map: map

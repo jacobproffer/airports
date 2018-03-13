@@ -11,7 +11,7 @@
 }
 
 .content-left {
-  border-right: 1px solid rgba($white, .1);
+  border-right: 1px solid rgba($white, 0.1);
   @include screen-above(1024px) {
     float: left;
   }
@@ -58,6 +58,8 @@
     padding: 5px 10px;
     border: 1px solid $yellow;
     margin-right: 5px;
+    cursor: pointer;
+    @include transition(all 250ms ease-in-out);
 
     &:nth-of-type(3n) {
       margin-right: 0;
@@ -68,7 +70,6 @@
       background-color: $yellow;
       border: 1px solid $yellow;
     }
-
   }
 }
 
