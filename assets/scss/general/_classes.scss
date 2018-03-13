@@ -11,9 +11,12 @@
 }
 
 .content-left {
-  border-right: 1px solid $yellow;
+  @include screen-below(1024px) {
+    border-bottom: 1px solid $yellow;
+  }
   @include screen-above(1024px) {
     float: left;
+    border-right: 1px solid $yellow;
   }
 }
 
