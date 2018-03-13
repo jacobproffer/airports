@@ -58,10 +58,11 @@
     padding: 5px 10px;
     border: 1px solid $yellow;
     margin-right: 5px;
+    margin-bottom: 5px;
     cursor: pointer;
     @include transition(all 250ms ease-in-out);
 
-    &:nth-of-type(3n) {
+    &:last-of-type {
       margin-right: 0;
     }
 

@@ -11,7 +11,21 @@ var newYorkTrip2012;
 var hersheyTrip2014;
 var texasTrip2003;
 var trips;
-var links = ['marker-00', 'marker-01', 'marker-02', 'marker-03', 'marker-04'];
+var links = [
+  'marker-00',
+  'marker-01',
+  'marker-02',
+  'marker-03',
+  'marker-04',
+  'marker-05',
+  'marker-06',
+  'marker-07',
+  'marker-08',
+  'marker-09',
+  'marker-10',
+  'marker-11',
+  'marker-12'
+];
 var style = [
   { stylers: [{ visibility: 'off' }] },
   {
