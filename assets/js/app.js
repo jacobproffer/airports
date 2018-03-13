@@ -15,16 +15,16 @@ var style = [
   { stylers: [{ visibility: 'off' }] },
   {
     featureType: 'water',
-    stylers: [{ visibility: 'on' }, { color: '#0d0d0d' }]
+    stylers: [{ visibility: 'on' }, { color: '#2D2D2D' }]
   },
   {
     featureType: 'landscape',
-    stylers: [{ visibility: 'on' }, { color: '#232323' }]
+    stylers: [{ visibility: 'on' }, { color: '#677279' }]
   },
   {
     featureType: 'administrative',
     elementType: 'geometry.stroke',
-    stylers: [{ visibility: 'on' }, { color: '#0d0d0d' }, { weight: 1 }]
+    stylers: [{ visibility: 'on' }, { color: '#2D2D2D' }, { weight: 1 }]
   }
 ];
 var markers = [
@@ -79,13 +79,16 @@ function initMap() {
     );
   }
 
-  var target = document.querySelector('#marker-00');
-  target.addEventListener('click', function() {
-    google.maps.event.trigger(markerCollection[0],'click');
-  });
-  var targetTwo = document.querySelector('#marker-01');
-  targetTwo.addEventListener('click', function() {
-    google.maps.event.trigger(markerCollection[1],'click');
+  // var links = ['marker-00', 'marker-01', 'marker-02', 'marker-03', 'marker-04'];
+  //
+  // for (i = 0; i < links.length; i++) {
+  //   document.getElementById(links[i]).addEventListener('click', function() {
+  //     google.maps.event.trigger(markerCollection[i], 'click');
+  //   });
+  // }
+
+  var japan = document.getElementById('marker-00').addEventListener('click', function() {
+    google.maps.event.trigger(markerCollection[0], 'click');
   });
 
   // Coordinates for my 2017 Japan trip

@@ -11,7 +11,7 @@
 }
 
 .content-left {
-  border-right: 1px solid rgba($white, .10);
+  border-right: 1px solid rgba($white, .1);
   @include screen-above(1024px) {
     float: left;
   }
@@ -31,20 +31,46 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  h1 {
+    color: $white;
+  }
+
   @include screen-below(1024px) {
     padding: 10%;
     @include size(100%, auto);
   }
+
   @include screen-above(1024px) {
     @include size(100%, 100vh);
   }
 }
 
-// .content {
-//   padding: 10% 0;
-//   border-top: 1px solid $white;
-//   border-bottom: 1px solid $white;
-// }
+.airport-list {
+  padding: 0;
+  margin: 0;
+  @include clearfix;
+
+  li {
+    float: left;
+    list-style-type: none;
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid $gray;
+    margin-right: 5px;
+
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $black;
+      background-color: $white;
+      border: 1px solid $white;
+    }
+
+  }
+}
 
 .info {
   padding: 50px;
