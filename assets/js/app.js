@@ -19,7 +19,7 @@ var style = [
   },
   {
     featureType: 'landscape',
-    stylers: [{ visibility: 'on' }, { color: '#677279' }]
+    stylers: [{ visibility: 'on' }, { color: '#423d27' }]
   },
   {
     featureType: 'administrative',
@@ -218,9 +218,9 @@ function initMap() {
   function generateLine(params) {
     new google.maps.Polyline({
       path: params,
-      strokeColor: '#a2a3cc',
-      strokeOpacity: 0.35,
-      strokeWeight: 3,
+      strokeColor: '#677279',
+      strokeOpacity: 0.40,
+      strokeWeight: 4,
       geodesic: true,
       map: map
     });
