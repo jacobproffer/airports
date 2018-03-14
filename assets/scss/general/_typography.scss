@@ -1,18 +1,9 @@
 h1 {
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   margin-top: 0;
   @include font-size($h1-font-sizes);
 }
 
 h2 {
   @include font-size($h2-font-sizes);
-}
-
-h3 {
-  color: $black;
-  @include font-size($h3-font-sizes);
-}
-
-h4 {
-  @include font-size($h4-font-sizes);
 }
