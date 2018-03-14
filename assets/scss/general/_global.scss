@@ -9,8 +9,13 @@
   background: $yellow;
 }
 
-img {
-  max-width: 100%;
+a {
+  color: $gray;
+  @include transition(color 250ms ease-in-out);
+
+  &:hover {
+    color: $black;
+  }
 }
 
 body {
