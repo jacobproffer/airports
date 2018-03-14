@@ -49,14 +49,13 @@
   }
 }
 
-.airport-list {
+.sidebar {
   padding: 0;
   margin: 0;
-  @include clearfix;
 
-  li {
-    float: left;
-    list-style-type: none;
+  button {
+    background-color: $black;
+    outline: none;
     text-align: center;
     padding: 5px 10px;
     border: 1px solid $yellow;
@@ -69,6 +68,7 @@
       margin-right: 0;
     }
 
+    &:focus,
     &:hover {
       color: $black;
       background-color: $yellow;

@@ -1,7 +1,7 @@
 var map;
 var center;
-var infowindow;
-var marker;
+var infoWindow;
+var markerBounds;
 var japanTrip2017;
 var texasTrip2017;
 var newYorkTrip2017;
@@ -11,21 +11,6 @@ var newYorkTrip2012;
 var hersheyTrip2014;
 var texasTrip2003;
 var trips;
-var links = [
-  'marker-00',
-  'marker-01',
-  'marker-02',
-  'marker-03',
-  'marker-04',
-  'marker-05',
-  'marker-06',
-  'marker-07',
-  'marker-08',
-  'marker-09',
-  'marker-10',
-  'marker-11',
-  'marker-12'
-];
 var style = [
   { stylers: [{ visibility: 'off' }] },
   {
@@ -43,19 +28,43 @@ var style = [
   }
 ];
 var markers = [
-  ['<h3>Narita International Airport</h3>', 35.772, 140.3929, 1],
-  ['<h3>Dallas/Forth Worth International Airport</h3>', 32.8998, -97.0403, 2],
-  ['<h3>John F. Kennedy International Airport</h3>', 40.6413, -73.7781, 3],
-  ['<h3>LaGuardia Airport</h3>', 40.7769, -73.874, 4],
-  ['<h3>Logan International Airport</h3>', 42.3656, -71.0096, 5],
-  ['<h3>Detroit Metropolitan Airport</h3>', 42.2162, -83.3554, 6],
-  ['<h3>OHare International Airport</h3>', 41.9742, -87.9073, 7],
-  ['<h3>Harrisburg International Airport</h3>', 40.1942, -76.7577, 8],
-  ['<h3>Austin Straubel International Airport</h3>', 44.4834, -88.1344, 9],
-  ['<h3>General Mitchell International Airport</h3>', 42.9476, -87.8966, 10],
-  ['<h3>Abilene Regional Airport</h3>', 32.4119, -99.68, 11],
-  ['<h3>Delta County Airport', 45.7202, -87.092, 12],
-  ['<h3>Sawyer International Airport', 46.3497, -87.3873, 13]
+  [35.772, 140.3929, '<h3>Narita International Airport</h3>', 'NRT', 1],
+  [
+    32.8998,
+    -97.0403,
+    '<h3>Dallas/Forth Worth International Airport</h3>',
+    'DFT',
+    2
+  ],
+  [
+    40.6413,
+    -73.7781,
+    '<h3>John F. Kennedy International Airport</h3>',
+    'JFK',
+    3
+  ],
+  [40.7769, -73.874, '<h3>LaGuardia Airport</h3>', 'LGA', 4],
+  [42.3656, -71.0096, '<h3>Logan International Airport</h3>', 'BOS', 5],
+  [42.2162, -83.3554, '<h3>Detroit Metropolitan Airport</h3>', 'DTW', 6],
+  [41.9742, -87.9073, '<h3>OHare International Airport</h3>', 'ORD', 7],
+  [40.1942, -76.7577, '<h3>Harrisburg International Airport</h3>', 'MDT', 8],
+  [
+    44.4834,
+    -88.1344,
+    '<h3>Austin Straubel International Airport</h3>',
+    'GRB',
+    9
+  ],
+  [
+    42.9476,
+    -87.8966,
+    '<h3>General Mitchell International Airport</h3>',
+    'MKE',
+    10
+  ],
+  [32.4119, -99.68, '<h3>Abilene Regional Airport</h3>', 'ABI', 11],
+  [45.7202, -87.092, '<h3>Delta County Airport', 'ESC', 12],
+  [46.3497, -87.3873, '<h3>Sawyer International Airport', 'MQT', 13]
 ];
 var focal = { lat: 46.3497, lng: -87.3873 };
 var iconBase = 'http://jacobproffer.com/locations/img/marker.svg';
@@ -69,11 +78,12 @@ function initMap() {
     styles: style
   });
 
-  infowindow = new google.maps.InfoWindow();
+  markerBounds = new google.maps.LatLngBounds();
+  infoWindow = new google.maps.InfoWindow();
   var markerCollection = [];
-  for (var i = 0; i < markers.length; i += 1) {
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(markers[i][1], markers[i][2]),
+
+  function makeMarker(options) {
+    var pushPin = new google.maps.Marker({
       map: map,
       icon: {
         url: iconBase,
@@ -81,29 +91,71 @@ function initMap() {
         anchor: new google.maps.Point(15, 15)
       }
     });
-    markerCollection.push(marker);
-    google.maps.event.addListener(
-      marker,
-      'click',
-      (function(marker, i) {
-        return function() {
-          infowindow.setContent(markers[i][0]);
-          infowindow.open(map, marker);
-        };
-      })(marker, i)
-    );
+    pushPin.setOptions(options);
+    google.maps.event.addListener(pushPin, 'click', function() {
+      infoWindow.setOptions(options);
+      infoWindow.open(map, pushPin);
+      if (this.sidebarButton) {
+        this.sidebarButton.button.focus();
+      }
+    });
+    var idleIcon = pushPin.getIcon();
+    if (options.sidebarItem) {
+      pushPin.sidebarButton = new SidebarItem(pushPin, options);
+      pushPin.sidebarButton.addIn('sidebar');
+    }
+    markerBounds.extend(options.position);
+    markerCollection.push(pushPin);
+    return pushPin;
   }
 
-  function generateLinks(marker, index) {
-    var marker = document.getElementById(marker);
-    if (marker) {
-      marker.addEventListener('click', function() {
-        google.maps.event.trigger(markerCollection[index], 'click');
-      });
-    }
+  google.maps.event.addListener(map, 'click', function() {
+    infoWindow.close();
+  });
+
+  function SidebarItem(marker, opts) {
+    var tag = opts.sidebarItemType || 'button';
+    var row = document.createElement(tag);
+    row.innerHTML = opts.sidebarItem;
+    row.className = opts.sidebarItemClassName || 'sidebar_item';
+    row.onclick = function() {
+      google.maps.event.trigger(marker, 'click');
+    };
+    row.onmouseover = function() {
+      google.maps.event.trigger(marker, 'mouseover');
+    };
+    row.onmouseout = function() {
+      google.maps.event.trigger(marker, 'mouseout');
+    };
+    this.button = row;
   }
-  for (i = 0; i < links.length; i++) {
-    generateLinks(links[i], i);
+
+  SidebarItem.prototype.addIn = function(block) {
+    if (block && block.nodeType === 1) {
+      this.div = block;
+    } else {
+      this.div =
+        document.getElementById(block) ||
+        document.getElementById('sidebar') ||
+        document.getElementsByTagName('body')[0];
+    }
+    this.div.appendChild(this.button);
+  };
+
+  SidebarItem.prototype.remove = function() {
+    if (!this.div) {
+      return false;
+    }
+    this.div.removeChild(this.button);
+    return true;
+  };
+
+  for (var i = 0; i < markers.length; i += 1) {
+    makeMarker({
+      position: new google.maps.LatLng(markers[i][0], markers[i][1]),
+      sidebarItem: markers[i][3],
+      content: markers[i][2]
+    });
   }
 
   // Coordinates for my 2017 Japan trip
