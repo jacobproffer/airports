@@ -48,7 +48,7 @@ var markers = [
   [41.9742, -87.9073, '<h2>OHare International Airport</h2>', 'ORD']
 ];
 var focal = { lat: 46.3497, lng: -87.3873 };
-var iconBase = 'http://jacobproffer.com/locations/img/marker.svg';
+var iconBase = 'http://jacobproffer.com/airports/img/marker.svg';
 
 /* eslint-disable no-unused-vars */
 function initMap() {
