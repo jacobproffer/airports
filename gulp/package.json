@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jacobproffer/locations.git"
+    "url": "https://github.com/jacobproffer/airports.git"
   },
   "author": "Jacob Proffer <jacob@jacobproffer.com>",
   "license": "MIT",
-  "homepage": "https://github.com/jacobproffer/locations",
+  "homepage": "https://github.com/jacobproffer/airports",
   "devDependencies": {
     "browser-sync": "^2.21.0",
     "gulp": "github:gulpjs/gulp#4.0",
