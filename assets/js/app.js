@@ -66,9 +66,9 @@ function initMap() {
   function makeMarker(options) {
     var pushPin = new google.maps.Marker({
       map: map,
+      optimized: false,
       icon: {
         url: iconBase,
-        optimized: false,
         scaledSize: new google.maps.Size(30, 30),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(15, 15)
