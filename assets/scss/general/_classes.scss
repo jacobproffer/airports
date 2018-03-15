@@ -5,7 +5,6 @@
 }
 
 .content-wrap {
-  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -82,9 +81,6 @@
 }
 
 .sidebar {
-  padding: 0;
-  margin: 0;
-
   button {
     background-color: $black;
     outline: none;
