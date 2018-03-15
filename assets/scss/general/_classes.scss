@@ -71,7 +71,18 @@
   margin-right: auto;
   @include size(75px, auto);
 
+  &:hover {
+    path {
+      fill: $gray;
+    }
+  }
+
   svg {
+    path {
+      fill: $yellow;
+      @include transition(fill 250ms ease-in-out);
+    }
+
     @include size(100%);
   }
 
