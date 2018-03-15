@@ -17,10 +17,12 @@
 .content-left,
 .content-right {
   flex: 0 1 100%;
+  max-width: 100%;
   @include screen-above(1024px) {
-    @include size(50%, auto);
     flex: 0 1 50%;
     align-self: auto;
+    max-width: 50%;
+    @include size(50%, auto);
   }
 }
 
