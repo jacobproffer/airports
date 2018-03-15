@@ -44,6 +44,7 @@
 
 .heading {
   position: relative;
+  text-align: center;
   padding: 0 10%;
   display: flex;
   flex-direction: column;
@@ -60,6 +61,21 @@
 
   @include screen-above(1024px) {
     @include size(100%, 100vh);
+  }
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  @include size(75px, auto);
+
+  svg {
+    @include size(100%);
+  }
+
+  @include screen-above(1024px) {
+    @include size(100px, auto);
   }
 }
 
