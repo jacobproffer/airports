@@ -1,3 +1,9 @@
+.content {
+  @include screen-below(1024px) {
+    flex: 1 0 auto;
+  }
+}
+
 .content-wrap {
   width: 100%;
   display: flex;

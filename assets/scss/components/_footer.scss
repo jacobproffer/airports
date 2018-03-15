@@ -4,4 +4,7 @@
   padding: 25px 0;
   background-color: $yellow;
   z-index: 2;
+  @include screen-below(1024px) {
+    flex-shrink: 0;
+  }
 }
