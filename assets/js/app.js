@@ -68,11 +68,11 @@ function initMap() {
       map: map,
       icon: {
         url: iconBase,
+        optimized: false,
         scaledSize: new google.maps.Size(30, 30),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(15, 15)
-      },
-      optimized: false
+      }
     });
     pushPin.setOptions(options);
     google.maps.event.addListener(pushPin, 'click', function() {
