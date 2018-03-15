@@ -30,7 +30,12 @@ var style = [
 var markers = [
   [32.4119, -99.68, '<h2>Abilene Regional Airport</h2>', 'ABI'],
   [42.3656, -71.0096, '<h2>Logan International Airport</h2>', 'BOS'],
-  [32.8998, -97.0403, '<h2>Dallas/Forth Worth International Airport</h2>', 'DFT'],
+  [
+    32.8998,
+    -97.0403,
+    '<h2>Dallas/Forth Worth International Airport</h2>',
+    'DFT'
+  ],
   [42.2162, -83.3554, '<h2>Detroit Metropolitan Airport</h2>', 'DTW'],
   [45.7202, -87.092, '<h2>Delta County Airport', 'ESC'],
   [44.4834, -88.1344, '<h2>Austin Straubel International Airport</h2>', 'GRB'],
@@ -63,9 +68,11 @@ function initMap() {
       map: map,
       icon: {
         url: iconBase,
+        scaledSize: new google.maps.Size(30, 30),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(15, 15)
-      }
+      },
+      optimized: false
     });
     pushPin.setOptions(options);
     google.maps.event.addListener(pushPin, 'click', function() {
