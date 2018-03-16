@@ -1,6 +1,7 @@
 var map;
 var center;
 var infoWindow;
+var markerCollection = [];
 var markerBounds;
 var japanTrip2017;
 var texasTrip2017;
@@ -50,6 +51,19 @@ var markers = [
 var focal = { lat: 46.3497, lng: -87.3873 };
 var iconBase = 'http://jacobproffer.com/airports/img/marker.svg';
 
+function closeAllInfoWindows() {
+  for (var i=0;i<markerCollection.length;i++) {
+    infoWindow.close();
+  }
+}
+
+// Listen for all clicks on the document
+document.addEventListener('click', function (event) {
+  if (!event.target.closest('#map') && !event.target.closest('.sidebar-item')) {
+    closeAllInfoWindows();
+  }
+});
+
 /* eslint-disable no-unused-vars */
 function initMap() {
   center = focal;
@@ -61,7 +75,6 @@ function initMap() {
 
   markerBounds = new google.maps.LatLngBounds();
   infoWindow = new google.maps.InfoWindow();
-  var markerCollection = [];
 
   function makeMarker(options) {
     var pushPin = new google.maps.Marker({
@@ -100,7 +113,7 @@ function initMap() {
     var tag = opts.sidebarItemType || 'button';
     var row = document.createElement(tag);
     row.innerHTML = opts.sidebarItem;
-    row.className = opts.sidebarItemClassName || 'sidebar_item';
+    row.className = opts.sidebarItemClassName || 'sidebar-item';
     row.onclick = function() {
       google.maps.event.trigger(marker, 'click');
     };
