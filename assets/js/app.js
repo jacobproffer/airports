@@ -51,14 +51,36 @@ var markers = [
 var focal = { lat: 46.3497, lng: -87.3873 };
 var iconBase = 'http://jacobproffer.com/airports/img/marker.svg';
 
+if (!Element.prototype.matches) {
+  Element.prototype.matches =
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.webkitMatchesSelector;
+}
+
+if (!Element.prototype.closest) {
+  Element.prototype.closest = function(s) {
+    var el = this;
+    if (!document.documentElement.contains(el)) {
+      return null;
+    }
+    do {
+      if (el.matches(s)) {
+        return el;
+      }
+      el = el.parentElement || el.parentNode;
+    } while (el !== null && el.nodeType === 1);
+    return null;
+  };
+}
+
 function closeAllInfoWindows() {
-  for (var i=0;i<markerCollection.length;i++) {
+  for (var i = 0; i < markerCollection.length; i++) {
     infoWindow.close();
   }
 }
 
 // Listen for all clicks on the document
-document.addEventListener('click', function (event) {
+document.addEventListener('click', function(event) {
   if (!event.target.closest('#map') && !event.target.closest('.sidebar-item')) {
     closeAllInfoWindows();
   }
