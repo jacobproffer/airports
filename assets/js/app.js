@@ -46,7 +46,9 @@ var markers = [
   [42.9476, -87.8966, '<h2>General Mitchell International Airport</h2>', 'MKE'],
   [46.3497, -87.3873, '<h2>Sawyer International Airport', 'MQT'],
   [35.772, 140.3929, '<h2>Narita International Airport</h2>', 'NRT'],
-  [41.9742, -87.9073, '<h2>OHare International Airport</h2>', 'ORD']
+  [41.9742, -87.9073, '<h2>OHare International Airport</h2>', 'ORD'],
+  [63.9870, -22.6192, '<h2>Keflavik International Airport</h2>', 'KEF'],
+  [44.8848, -93.2223, '<h2>Minneapolis–Saint Paul International Airport</h2>', 'MSP'],
 ];
 var focal = { lat: 46.3497, lng: -87.3873 };
 var iconBase = 'http://jacobproffer.com/airports/img/marker.svg';
@@ -176,6 +178,24 @@ function initMap() {
     });
   }
 
+  // Coordinates for my 2018 Iceland trip
+  icelandTrip2018 = [
+    // K.I. Sawyer Airport (MQT)
+    new google.maps.LatLng(46.3497, -87.3873),
+    // Detroit Metropolitan Airport (DTW)
+    new google.maps.LatLng(42.2162, -83.3554),
+    // John F. Kennedy Airport (JFK)
+    new google.maps.LatLng(40.6413, -73.7781),
+    // Keflavik international Airport (KEF)
+    new google.maps.LatLng(63.9870, -22.6192),
+    // John F. Kennedy Airport (JFK)
+    new google.maps.LatLng(40.6413, -73.7781),
+    // Minneapolis–Saint Paul International Airport
+    new google.maps.LatLng(44.8848, -93.2223),
+    // K.I. Sawyer Airport (MQT)
+    new google.maps.LatLng(46.3497, -87.3873)
+  ];
+
   // Coordinates for my 2017 Japan trip
   japanTrip2017 = [
     // K.I. Sawyer Airport (MQT)
@@ -289,6 +309,7 @@ function initMap() {
 
   // trips array
   trips = [
+    icelandTrip2018,
     japanTrip2017,
     texasTrip2017,
     newYorkTrip2017,
