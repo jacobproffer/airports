@@ -32,27 +32,22 @@ var style = [
 ];
 var markers = [
   [32.4119, -99.68, '<h2>Abilene Regional Airport</h2>', 'ABI'],
+  [52.3105, 4.7683, '<h2>Amsterdam Airport Schiphol</h2>', 'AMS'],
+  [60.2918, 5.2220, '<h2>Bergen Airport, Flesland</h2>', 'BGO'],
   [42.3656, -71.0096, '<h2>Logan International Airport</h2>', 'BOS'],
-  [
-    32.8998,
-    -97.0403,
-    '<h2>Dallas/Forth Worth International Airport</h2>',
-    'DFT'
-  ],
+  [32.8998, -97.0403, '<h2>Dallas/Forth Worth International Airport</h2>', 'DFT'],
   [42.2162, -83.3554, '<h2>Detroit Metropolitan Airport</h2>', 'DTW'],
   [45.7202, -87.092, '<h2>Delta County Airport', 'ESC'],
   [44.4834, -88.1344, '<h2>Austin Straubel International Airport</h2>', 'GRB'],
   [40.6413, -73.7781, '<h2>John F. Kennedy International Airport</h2>', 'JFK'],
+    [63.9870, -22.6192, '<h2>Keflavik International Airport</h2>', 'KEF'],
   [40.7769, -73.874, '<h2>LaGuardia Airport</h2>', 'LGA'],
   [40.1942, -76.7577, '<h2>Harrisburg International Airport</h2>', 'MDT'],
   [42.9476, -87.8966, '<h2>General Mitchell International Airport</h2>', 'MKE'],
   [46.3497, -87.3873, '<h2>Sawyer International Airport', 'MQT'],
-  [35.772, 140.3929, '<h2>Narita International Airport</h2>', 'NRT'],
-  [41.9742, -87.9073, '<h2>OHare International Airport</h2>', 'ORD'],
-  [63.9870, -22.6192, '<h2>Keflavik International Airport</h2>', 'KEF'],
   [44.8848, -93.2223, '<h2>Minneapolis–Saint Paul International Airport</h2>', 'MSP'],
-  [52.3105, 4.7683, '<h2>Amsterdam Airport Schiphol</h2>', 'AMS'],
-  [60.2918, 5.2220, '<h2>Bergen Airport, Flesland</h2>', 'BGO']
+  [35.772, 140.3929, '<h2>Narita International Airport</h2>', 'NRT'],
+  [41.9742, -87.9073, '<h2>OHare International Airport</h2>', 'ORD']
 ];
 var focal = { lat: 46.3497, lng: -87.3873 };
 var iconBase = 'http://jacobproffer.com/airports/img/marker.svg';
