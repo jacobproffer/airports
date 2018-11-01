@@ -3,6 +3,8 @@ var center;
 var infoWindow;
 var markerCollection = [];
 var markerBounds;
+var norwayTrip2018;
+var icelandTrip2018;
 var japanTrip2017;
 var texasTrip2017;
 var newYorkTrip2017;
@@ -49,6 +51,8 @@ var markers = [
   [41.9742, -87.9073, '<h2>OHare International Airport</h2>', 'ORD'],
   [63.9870, -22.6192, '<h2>Keflavik International Airport</h2>', 'KEF'],
   [44.8848, -93.2223, '<h2>Minneapolis–Saint Paul International Airport</h2>', 'MSP'],
+  [52.3105, 4.7683, '<h2>Amsterdam Airport Schiphol</h2>', 'AMS'],
+  [60.2918, 5.2220, '<h2>Bergen Airport, Flesland</h2>', 'BGO']
 ];
 var focal = { lat: 46.3497, lng: -87.3873 };
 var iconBase = 'http://jacobproffer.com/airports/img/marker.svg';
@@ -177,6 +181,24 @@ function initMap() {
       content: markers[i][2]
     });
   }
+
+  // Coordinates for my 2018 Norway trip
+  norwayTrip2018 = [
+    // K.I. Sawyer Airport (MQT)
+    new google.maps.LatLng(46.3497, -87.3873),
+    // Detroit Metropolitan Airport (DTW)
+    new google.maps.LatLng(42.2162, -83.3554),
+    // Amsterdam Airport Schiphol
+    new google.maps.LatLng(52.3105, 4.7683),
+    // Bergen Airport, Flesland (BGO)
+    new google.maps.LatLng(60.2918, 5.2220),
+    // Amsterdam Airport Schiphol
+    new google.maps.LatLng(52.3105, 4.7683),
+    // Minneapolis–Saint Paul International Airport
+    new google.maps.LatLng(44.8848, -93.2223),
+    // K.I. Sawyer Airport (MQT)
+    new google.maps.LatLng(46.3497, -87.3873),
+  ];
 
   // Coordinates for my 2018 Iceland trip
   icelandTrip2018 = [
@@ -309,6 +331,7 @@ function initMap() {
 
   // trips array
   trips = [
+    norwayTrip2018,
     icelandTrip2018,
     japanTrip2017,
     texasTrip2017,
