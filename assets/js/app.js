@@ -346,6 +346,7 @@ function initMap() {
 
   // trips array
   trips = [
+    japanTrip2019,
     norwayTrip2018,
     icelandTrip2018,
     japanTrip2017,
@@ -363,7 +364,7 @@ function initMap() {
     new google.maps.Polyline({
       path: params,
       strokeColor: '#677279',
-      strokeOpacity: 0.4,
+      strokeOpacity: 0.2,
       strokeWeight: 3,
       geodesic: true,
       map: map
