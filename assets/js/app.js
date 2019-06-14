@@ -3,6 +3,7 @@ var center;
 var infoWindow;
 var markerCollection = [];
 var markerBounds;
+var japanTrip2019;
 var norwayTrip2018;
 var icelandTrip2018;
 var japanTrip2017;
@@ -40,17 +41,18 @@ var markers = [
   [45.7202, -87.092, '<h2>Delta County Airport', 'ESC'],
   [44.4834, -88.1344, '<h2>Austin Straubel International Airport</h2>', 'GRB'],
   [40.6413, -73.7781, '<h2>John F. Kennedy International Airport</h2>', 'JFK'],
-    [63.9870, -22.6192, '<h2>Keflavik International Airport</h2>', 'KEF'],
+  [63.9870, -22.6192, '<h2>Keflavik International Airport</h2>', 'KEF'],
   [40.7769, -73.874, '<h2>LaGuardia Airport</h2>', 'LGA'],
   [40.1942, -76.7577, '<h2>Harrisburg International Airport</h2>', 'MDT'],
   [42.9476, -87.8966, '<h2>General Mitchell International Airport</h2>', 'MKE'],
   [46.3497, -87.3873, '<h2>Sawyer International Airport', 'MQT'],
   [44.8848, -93.2223, '<h2>Minneapolis–Saint Paul International Airport</h2>', 'MSP'],
   [35.772, 140.3929, '<h2>Narita International Airport</h2>', 'NRT'],
-  [41.9742, -87.9073, '<h2>OHare International Airport</h2>', 'ORD']
+  [41.9742, -87.9073, '<h2>OHare International Airport</h2>', 'ORD'],
+  [34.7863, 135.4378, '<h2>Osaka International Airport</h2>', 'ITM']
 ];
 var focal = { lat: 46.3497, lng: -87.3873 };
-var iconBase = 'http://jacobproffer.com/airports/img/marker.svg';
+var iconBase = 'https://jacobproffer.github.io/airports/img/marker.svg';
 
 if (!Element.prototype.matches) {
   Element.prototype.matches =
@@ -176,6 +178,24 @@ function initMap() {
       content: markers[i][2]
     });
   }
+
+  // Coordinates for my 2017 Japan trip
+  japanTrip2019 = [
+    // K.I. Sawyer Airport (MQT)
+    new google.maps.LatLng(46.3497, -87.3873),
+    // Chicago O'Hare Airport (ORD)
+    new google.maps.LatLng(41.9742, -87.9073),
+    // Narita International Airport (NRT)
+    new google.maps.LatLng(35.772, 140.3929),
+    // Osaka International Airport (ITM)
+    new google.maps.LatLng(34.7863, 135.4378),
+    // Narita International Airport (NRT)
+    new google.maps.LatLng(35.772, 140.3929),
+    // Chicago O'Hare Airport (ORD)
+    new google.maps.LatLng(41.9742, -87.9073),
+    // K.I. Sawyer Airport (MQT)
+    new google.maps.LatLng(46.3497, -87.3873)
+  ];
 
   // Coordinates for my 2018 Norway trip
   norwayTrip2018 = [
